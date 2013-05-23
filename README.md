@@ -4,6 +4,10 @@
 reqdres is a set of utilities that extend ```request``` and ```response``` bundled into a piece of connect middleware
 #Status
 Currently only contains ```res``` utilities
+#Install
+```
+npm install reqdres
+```
 
 #Example
 
