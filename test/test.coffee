@@ -4,18 +4,15 @@ connect 	= require 'connect'
 app 		= connect()
 request		= require 'supertest'
 fs			= require 'fs'
+jade		= require 'jade'
 
 describe "res", ->
 	beforeEach ->
 		app = connect()
 		app.use reqdres
 			dir: __dirname+"/views"
-			ext: ".html"
-			template: (file, res, opts)->
-				res.writeHead 200, "Content-Type": "text/html"
-				fs.readFile file, (err, html)->
-					throw err if err
-					res.end html
+			ext: ".jade"
+			template: jade.__express # tests that the api is express compatable
 	describe ".send", ->
 		it "should send Hello World", (done)->
 			app.use (req, res)->
@@ -56,9 +53,9 @@ describe "res", ->
 	describe ".render", ->
 		it "should render the view", (done)->
 			app.use (req, res)->
-				res.render "index"
+				res.render "index", name: "Test"
 			request(app)
 				.get('/')
 				.expect(200)
 				.expect("Content-Type", "text/html")
-				.expect("<p>Hello {{name}}</p>", done)
+				.expect("<p>Hello Test</p>", done)

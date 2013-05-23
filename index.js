@@ -178,8 +178,16 @@ function getType(file){
 }
 
 function render(options) {
-    return function(file, opts){
-        options.template(path.join(options.dir, file)+options.ext, this, opts);
+    return function(file, locals, cb){
+        var res = this;
+        function defCb(err, html){
+            if (err) throw err;
+            res.writeHead(200, {"Content-Type": "text/html"});
+            res.end(html);
+        }
+        if (typeof locals === "function") cb = locals // no options passed
+        if (!cb) cb = defCb;
+        options.template(path.join(options.dir, file)+options.ext, locals, cb);
     };
     
 };
