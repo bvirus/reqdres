@@ -1,6 +1,6 @@
 {
   "name": "reqdres",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "repository": "git://github.com/PyScripter255/reqdres.git",
   "description": "Request/response utilities bundled into middleware",
   "main": "index.js",
