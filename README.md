@@ -1,5 +1,5 @@
 # reqdres
-__req__ueste **d** __res__ponse
+__req__ ueste **d** __res__ ponse
 # What?
 reqdres is a set of utilities that extend ```request``` and ```response``` bundled into a piece of connect middleware
 # Status
