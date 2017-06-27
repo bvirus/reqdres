@@ -1,15 +1,15 @@
-#reqdres
+# reqdres
 __req__ueste **d** __res__ponse
-#What?
+# What?
 reqdres is a set of utilities that extend ```request``` and ```response``` bundled into a piece of connect middleware
-#Status
+# Status
 Currently only contains ```res``` utilities
-#Install
+# Install
 ```
 npm install reqdres
 ```
 
-#Example
+# Example
 
 ```javascript
 var connect = require("connect");
@@ -33,7 +33,7 @@ app.use(function(req, res){
 })
 ```
 
-#License
+# License
 The MIT License (MIT)
 
 Copyright (c) 2013 James A. Eschrich
